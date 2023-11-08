@@ -31,9 +31,9 @@ const cyberpunk_msg = `
 `;
 
 const starfield_msg = `
-  <p style="margin-bottom: 1.5em;">-- TRANSMISSION ERROR: Data Not Found --</p>
+  <p style="margin-bottom: 1.5em; color: #ff3796;">-- TRANSMISSION ERROR: Data Not Found --</p>
   <p style="margin-bottom: 1.5em;">Pilot, it seems your navigation systems are off-course. The sector you're trying to reach does not exist in our star charts. It's a vast universe out there, but this void is uncharted.</p>
-  <p style="margin-bottom: 1.5em;">[ERROR 404: Stellar Coordinates Missing]</p>
+  <p style="margin-bottom: 1.5em; color: #29abe2;">[ERROR 404: Stellar Coordinates Missing]</p>
   <p style="margin-bottom: 1.5em;">Maybe this is a glitch in the astrogation database, or perhaps you've stumbled upon an anomaly in the cosmic web. Don't drift into the abyss just yet.</p>
   <p style="margin-bottom: 1.5em;">> Next steps for the lost traveler:</p>
   <ul style="margin-bottom: 1.5em; list-style: none;">
@@ -43,15 +43,30 @@ const starfield_msg = `
   </ul>
   <p style="margin-bottom: 1.5em;">Remember, space is a frontier that often defies expectations. Each failed jump drive or missed connection is a chance to discover new horizons.</p>
   <p style="margin-bottom: 1.5em;">Chart your course anew, explorer. Your odyssey among the stars is far from over, and the next planetfall could reveal untold stories.</p>
-  <p>-- End of transmission --</p>
+  <p style="color: #ff3796;">-- End of transmission --</p>
+`;
+
+const rdr2_msg = `
+  <p style="margin-bottom: 1.5em; color: #ff3796;">-- ERROR 404: Trail's Gone Cold --</p>
+  <p style="margin-bottom: 1.5em;">Partner, looks like you've wandered off the map. The page you're searchin' for is like an old ghost town, silent and forgotten.</p>
+  <p style="margin-bottom: 1.5em;">Might be you're lookin' in the wrong place or it's been gobbled up by the sands of time, just like a tumbleweed lost in the prairie wind.</p>
+  <p style="margin-bottom: 1.5em;">Here’s how you can get back on the right path:</p>
+  <ul style="margin-bottom: 1.5em; list-style: none;">
+    <li>1. Double-check those coordinates. Could be you mistyped a letter or two.</li>
+    <li>2. Ask the local telegraph operator (aka the search bar) for directions.</li>
+    <li>3. Head on back to the homestead. Sometimes, the trail starts where you last rested.</li>
+  </ul>
+  <p style="margin-bottom: 1.5em;">The frontier is vast and full of unknowns, but don't let that deter you. Hitch up your wagon and set out again. There’s a whole world of discovery awaiting for those brave enough to keep searchin'.</p>
+  <p style="margin-bottom: 1.5em;">So, saddle up! Your next adventure is just over the next ridge.</p>
+  <p style="color: #29abe2;">-- Yer faithful trail companion, The Website Wrangler --</p>
 `;
 
 ---
 
 <Layout title="Not found">
   <div class="grid justify-self-center justify-items-center w-full">
-    <h1>404 - Not Found</h1>
-    <div set:html={starfield_msg}></div>
+    <h1 class="text-3xl font-extrabold pb-4">404 - Not Found</h1>
+    <div class="text-m font-extrabold pb-4" set:html={rdr2_msg}></div>
     <span class="block text-8xl p-8" role="img" aria-label="force hand wave">{icon}</span>
   </div>
 </Layout>
