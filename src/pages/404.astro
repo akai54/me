@@ -5,13 +5,13 @@ const emoji = ["👁️‍🗨️", "🤚🏻", "🕸", "🌘", "🎴", "🃏", 
 const icon = emoji[Math.floor(Math.random() * emoji.length)];
 
 const witcher_msg = `
-  <p style="margin-bottom: 1.5em;">Halt, wanderer!</p>
+  <p style="margin-bottom: 1.5em; color: #ff3796;">Halt, wanderer!</p>
   <p style="margin-bottom: 1.5em;">Thou hast strayed from the known paths of the Continent into a forsaken nook of the vast Cyberspace, where not even the White Wolf dareth to roam. The page ye seek is hidden by an ancient curse, elusive as a specter in the moonlight, vanished into the mists of the interweb.</p>
   <p style="margin-bottom: 1.5em;">Fear not, for your journey needn't end in this land of non-existence. Summon your resolve, brave traveler, and wield your mouse like a silver sword to combat this digital leshen. Retrace thy steps and consult the omniscient search bar, or invoke the incantations known as URLs to guide thee back to safer grounds.</p>
   <p style="margin-bottom: 1.5em;">Should all else fail, beckon the guardians of this realm with the raven named "Refresh" or embark on a new quest by returning to the homepage.</p>
   <p style="margin-bottom: 1.5em;">Remember, it is your destiny to find the path, for the world of the internet is vast and full of destinations.</p>
   <p style="margin-bottom: 1.5em;">Go forth, and let the stars guide you, for this 404 error is but a mere signpost on your grand adventure.</p>
-  <p>– The Chronicler of Code</p>
+  <p style="color: #29abe2;">– The Chronicler of Code</p>
 `
 
 const cyberpunk_msg = `
@@ -61,12 +61,14 @@ const rdr2_msg = `
   <p style="color: #29abe2;">-- Yer faithful trail companion, The Website Wrangler --</p>
 `;
 
+const error_messages = [witcher_msg, cyberpunk_msg, starfield_msg, rdr2_msg];
+const message = error_messages[Math.floor(Math.random() * error_messages.length)];
 ---
 
 <Layout title="Not found">
   <div class="grid justify-self-center justify-items-center w-full">
     <h1 class="text-3xl font-extrabold pb-4">404 - Not Found</h1>
-    <div class="text-m font-extrabold pb-4" set:html={rdr2_msg}></div>
+    <div class="text-m font-extrabold pb-4" set:html={message}></div>
     <span class="block text-8xl p-8" role="img" aria-label="force hand wave">{icon}</span>
   </div>
 </Layout>
