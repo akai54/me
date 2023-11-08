@@ -15,14 +15,14 @@ interface Props {
   publishedOn?: string;
 }
 
-const baseTags = ["tyler wray", "blog", "tech"];
+const baseTags = ["besher al addam", "blog", "tech", "Master", "Licence", "Nantes"];
 
 const defaultMeta = {
-  title: "Tyler Wray",
+  title: "Besher AL ADDAM",
   // TODO: Make better
-  description: "My little corner of the internet",
+  description: "My personal website",
   imageSrc: profile,
-  imageAlt: "Photo of the author outdoors",
+  imageAlt: "Photo of Besher AL ADDAM outdoors",
   tags: baseTags,
 };
 
@@ -39,7 +39,7 @@ const keywords = [...tags, ...baseTags].join(", ");
 
 const socialImageURL = new URL(imageSrc.src, Astro.site);
 const canonicalURL = new URL(Astro.url).href;
-const twitterHandle = "@wray_tw";
+const twitterHandle = "@bshr_adam";
 ---
 
 <!doctype html>
@@ -56,7 +56,7 @@ const twitterHandle = "@wray_tw";
     <meta property="og:image" content={socialImageURL} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:description" content={description} />
-    <meta property="og:site_name" content="Tyler Wray" />
+    <meta property="og:site_name" content="Besher AL ADDAM" />
     <meta property="og:image:url" content={socialImageURL} />
     <meta property="og:image:alt" content={imageAlt} />
     <meta property="og:locale" content="en_US" />
@@ -65,7 +65,7 @@ const twitterHandle = "@wray_tw";
         <meta property="article:published_time" content={publishedOn} />
       )
     }
-    <meta property="article:author" content="Tyler Wray" />
+    <meta property="article:author" content="Besher AL ADDAM" />
     <meta property="article:section" content="Technology" />
     <meta property="article:tags" content={keywords} />
     <meta property="twitter:card" content="summary_large_image" />
@@ -78,7 +78,7 @@ const twitterHandle = "@wray_tw";
     <meta property="twitter:creator" content={twitterHandle} />
     <meta property="twitter:creator:id" content="268108378" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="author" content="Tyler Wray" />
+    <meta name="author" content="Besher AL ADDAM" />
     <meta name="keywords" content={keywords} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script is:inline src="/sw.js"></script>
