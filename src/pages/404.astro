@@ -1,7 +1,9 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
+
 const emoji = ["👁️‍🗨️", "🤚🏻", "🕸", "🌘", "🎴", "🃏", "🚬"];
 const icon = emoji[Math.floor(Math.random() * emoji.length)];
+
 const witcher_msg = `
   <p style="margin-bottom: 1.5em;">Halt, wanderer!</p>
   <p style="margin-bottom: 1.5em;">Thou hast strayed from the known paths of the Continent into a forsaken nook of the vast Cyberspace, where not even the White Wolf dareth to roam. The page ye seek is hidden by an ancient curse, elusive as a specter in the moonlight, vanished into the mists of the interweb.</p>
@@ -11,12 +13,29 @@ const witcher_msg = `
   <p style="margin-bottom: 1.5em;">Go forth, and let the stars guide you, for this 404 error is but a mere signpost on your grand adventure.</p>
   <p>– The Chronicler of Code</p>
 `
+
+const cyberpunk_msg = `
+  <p style="margin-bottom: 1.5em; color: #ff3796;">--- Cybernetic Error Directive: Page Not Found ---</p>
+  <p style="margin-bottom: 1.5em;">Wake the hell up, Samurai! We've got a city to burn and a page to find. But it looks like this part of the Net is just a ghost town.</p>
+  <p style="margin-bottom: 1.5em; color: #29abe2;">[ERROR CODE: 404 - PAGE NOT FOUND]</p>
+  <p style="margin-bottom: 1.5em;">The data you're jackin' for ain't here. Maybe it got wiped by a corpo netrunner, or perhaps it never existed. Either way, you've hit a dead end in Night City's cyberspace.</p>
+  <p style="margin-bottom: 1.5em;">>> What now, choom?</p>
+  <ul style="margin-bottom: 1.5em; list-style: none;">
+    <li>1. Double-check the URL - maybe your cyberware glitched out.</li>
+    <li>2. Use the mainframe search function - you've got the tools.</li>
+    <li>3. Hit the neon trail back to the homepage - sometimes retreat is the best option.</li>
+  </ul>
+  <p style="margin-bottom: 1.5em;">Whatever you decide, keep your eyes peeled and your ICE breakers ready. The Net's full of opportunities if you know where to look.</p>
+  <p style="margin-bottom: 1.5em;">Stay edgy. Stay alive. And if you can't find your path, make your own.</p>
+  <p style="margin-bottom: 1.5em; color: #ff3796;">— V, the Netrunning Nomad</p>
+`;
+
 ---
 
 <Layout title="Not found">
   <div class="grid justify-self-center justify-items-center w-full">
     <h1>404 - Not Found</h1>
-    <div set:html={witcher_msg}></div>
+    <div set:html={cyberpunk_msg}></div>
     <span class="block text-8xl p-8" role="img" aria-label="force hand wave">{icon}</span>
   </div>
 </Layout>
