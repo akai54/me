@@ -30,12 +30,28 @@ const cyberpunk_msg = `
   <p style="margin-bottom: 1.5em; color: #ff3796;">— V, the Netrunning Nomad</p>
 `;
 
+const starfield_msg = `
+  <p style="margin-bottom: 1.5em;">-- TRANSMISSION ERROR: Data Not Found --</p>
+  <p style="margin-bottom: 1.5em;">Pilot, it seems your navigation systems are off-course. The sector you're trying to reach does not exist in our star charts. It's a vast universe out there, but this void is uncharted.</p>
+  <p style="margin-bottom: 1.5em;">[ERROR 404: Stellar Coordinates Missing]</p>
+  <p style="margin-bottom: 1.5em;">Maybe this is a glitch in the astrogation database, or perhaps you've stumbled upon an anomaly in the cosmic web. Don't drift into the abyss just yet.</p>
+  <p style="margin-bottom: 1.5em;">> Next steps for the lost traveler:</p>
+  <ul style="margin-bottom: 1.5em; list-style: none;">
+    <li>1. Re-calculate your coordinates; the right path might be a warp jump away.</li>
+    <li>2. Engage your ship's diagnostics to scan for any navigational errors.</li>
+    <li>3. Set course back to the spaceport home beacon - safety in familiar stars.</li>
+  </ul>
+  <p style="margin-bottom: 1.5em;">Remember, space is a frontier that often defies expectations. Each failed jump drive or missed connection is a chance to discover new horizons.</p>
+  <p style="margin-bottom: 1.5em;">Chart your course anew, explorer. Your odyssey among the stars is far from over, and the next planetfall could reveal untold stories.</p>
+  <p>-- End of transmission --</p>
+`;
+
 ---
 
 <Layout title="Not found">
   <div class="grid justify-self-center justify-items-center w-full">
     <h1>404 - Not Found</h1>
-    <div set:html={cyberpunk_msg}></div>
+    <div set:html={starfield_msg}></div>
     <span class="block text-8xl p-8" role="img" aria-label="force hand wave">{icon}</span>
   </div>
 </Layout>
