@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tylerwray.me/sitemap-index.xml
+Sitemap: https://beshoux.neocities.org/sitemap-index.xml
