@@ -26,8 +26,6 @@ const publishDate = entry.data.publishedOn.toLocaleDateString("en-us", {
 const fullUrl = `https://beshoux.neocities.org/${entry.collection}/${entry.slug}/`;
 const githubEditPath = `/src/content/${entry.collection}/${entry.slug}.md`;
 
-console.log(entry.collection);
-
 const headings: MarkdownHeading[] = [
   { depth: 2, slug: "overview", text: "Overview" },
   ...Astro.props.headings,
