@@ -61,7 +61,18 @@ const rdr2_msg = `
   <p style="color: #29abe2;">-- Yer faithful trail companion, The Website Wrangler --</p>
 `;
 
-const error_messages = [witcher_msg, cyberpunk_msg, starfield_msg, rdr2_msg];
+const darkSouls_msg = `
+  <p style="margin-bottom: 1.5em; color: #ff3796;">-- ERROR 404: BONFIRE NOT LIT --</p>
+  <p style="margin-bottom: 1.5em;">Ashen one, the page thou seeketh cannot be found. It is shrouded in darkness, a land forgotten by time, akin to the Abyss.</p>
+  <p style="margin-bottom: 1.5em;">Perhaps the link has been severed, a path obscured by the convolutions of the world. Seek ye a lantern, or cast light to dispel the shadows, and ensure thine URL is inscribed in true form.</p>
+  <p style="margin-bottom: 1.5em;">Venture forth, bearer of the curse, and let not this hindrance deter thee. For in the world of Lordran, the flames guide thee, and it is only by perseverance that one may find the way.</p>
+  <p style="margin-bottom: 1.5em;">If thou art truly lost, seek guidance by returning to the homepage, the sanctuary of thine journey's beginning.</p>
+  <p style="margin-bottom: 1.5em;">May the flames guide thee, and mayst thou find peace in thine quest for discovery, for the embers of a page once there linger in the strands of the web, waiting to be rekindled.</p>
+  <p style="color: #29abe2;">-- Thine Wayfarer of the Web --</p>
+`;
+
+
+const error_messages = [witcher_msg, cyberpunk_msg, starfield_msg, rdr2_msg, darkSouls_msg];
 const message = error_messages[Math.floor(Math.random() * error_messages.length)];
 ---
 
