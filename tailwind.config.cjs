@@ -34,7 +34,7 @@ module.exports = {
               fontWeight: theme("fontWeight.normal"),
               fontStyle: "normal",
               backgroundColor: theme("colors.purple.100"),
-              borderLeftColor: theme("colors.purple.400"),
+              borderLeftColor: theme("colors.pink.700"),
               borderLeftWidth: theme("borderWidth.8"),
               marginTop: 0,
               marginBottom: theme("spacing.4"),
@@ -96,7 +96,7 @@ module.exports = {
               borderLeftColor: theme("colors.purple.800"),
             },
             a: {
-              color: theme("colors.purple.400"),
+              color: theme("colors.pink.700"),
               border: theme("colors.purple.800"),
             },
             "p, li": {
