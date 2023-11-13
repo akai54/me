@@ -30,3 +30,4 @@ layout: ../layouts/PageLayout.astro
 
 - Github: [akai54](https://github.com/akai54)
 - LinkedIn: [Besher AL ADDAM](https://www.linkedin.com/in/besher-al-addam/)
+- CV: [Here](https://beshoux.neocities.org/posts/cv_besher.pdf)
