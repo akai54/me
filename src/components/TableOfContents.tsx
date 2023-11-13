@@ -51,7 +51,7 @@ export const TableOfContents = ({ headings }: Props) => {
             <a
               className={`${
                 currentID === slug
-                  ? "dark:bg-purple-800/40 bg-purple-200 border-purple-400 dark:border-purple-600"
+                  ? "dark:bg-cyan-800/40 bg-cyan-200 border-cyan-400 dark:border-cyan-600"
                   : "border-zinc-300 dark:border-zinc-600 text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:border-zinc-700 dark:hover:border-zinc-300"
               } group flex py-1 border-l-4 ${depthClasses.get(depth)}`}
               href={`#${slug}`}
