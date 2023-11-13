@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        purple: colors.violet,
+        purple: colors.cyan,
       },
       // See tailwind default theme for theme keys
       // https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js
@@ -33,9 +33,10 @@ module.exports = {
             blockquote: {
               fontWeight: theme("fontWeight.normal"),
               fontStyle: "normal",
-              backgroundColor: theme("colors.purple.100"),
-              borderLeftColor: theme("colors.pink.700"),
+              backgroundColor: theme("colors.cyan.600"),
+              borderLeftColor: theme("colors.cyan.400"),
               borderLeftWidth: theme("borderWidth.8"),
+              color: "white",
               marginTop: 0,
               marginBottom: theme("spacing.4"),
               marginInline: "-0.5rem",
@@ -49,7 +50,7 @@ module.exports = {
               },
             },
             a: {
-              color: theme("colors.purple.600"),
+              color: theme("colors.pink.600"),
               textDecorationLine: "none",
               "&:hover": {
                 textDecorationLine: "underline",
@@ -92,12 +93,12 @@ module.exports = {
         invert: {
           css: {
             blockquote: {
-              backgroundColor: "rgba(121,72,232,0.2)",
-              borderLeftColor: theme("colors.purple.800"),
+              backgroundColor: theme("colors.cyan.600"),
+              borderLeftColor: theme("colors.cyan.400"),
             },
             a: {
               color: theme("colors.pink.700"),
-              border: theme("colors.purple.800"),
+              border: theme("colors.pink.700"),
             },
             "p, li": {
               code: {
