@@ -21,7 +21,7 @@ layout: ../layouts/PageLayout.astro
 - [Astro](https://astro.build)
 - [Angular](https://angular.io/)
 - [Podman](https://podman.io/)
-- [Mechanical keyboards](https://www.daskeyboard.com/daskeyboard-4-ultimate/)
+- [Graphics Programming](https://learnopengl.com/)
 - [Nala](https://gitlab.com/volian/nala)
 - [MongoDB](https://www.mongodb.com)
 - [Prettier](https://prettier.io/)
