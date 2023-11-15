@@ -3,83 +3,91 @@ import Layout from "../layouts/BaseLayout.astro";
 
 const emoji = ["👁️‍🗨️", "🤚🏻", "🕸", "🌘", "🎴", "🃏", "🚬"];
 const icon = emoji[Math.floor(Math.random() * emoji.length)];
-
-const witcher_msg = `
-  <p style="margin-bottom: 1.5em; color: #ff3796;">Halt, wanderer!</p>
-  <p style="margin-bottom: 1.5em;">Thou hast strayed from the known paths of the Continent into a forsaken nook of the vast Cyberspace, where not even the White Wolf dareth to roam. The page ye seek is hidden by an ancient curse, elusive as a specter in the moonlight, vanished into the mists of the interweb.</p>
-  <p style="margin-bottom: 1.5em;">Fear not, for your journey needn't end in this land of non-existence. Summon your resolve, brave traveler, and wield your mouse like a silver sword to combat this digital leshen. Retrace thy steps and consult the omniscient search bar, or invoke the incantations known as URLs to guide thee back to safer grounds.</p>
-  <p style="margin-bottom: 1.5em;">Should all else fail, beckon the guardians of this realm with the raven named "Refresh" or embark on a new quest by returning to the homepage.</p>
-  <p style="margin-bottom: 1.5em;">Remember, it is your destiny to find the path, for the world of the internet is vast and full of destinations.</p>
-  <p style="margin-bottom: 1.5em;">Go forth, and let the stars guide you, for this 404 error is but a mere signpost on your grand adventure.</p>
-  <p style="color: #29abe2;">– The Chronicler of Code</p>
-`
-
-const cyberpunk_msg = `
-  <p style="margin-bottom: 1.5em; color: #29abe2;">--- Cybernetic Error Directive: Page Not Found ---</p>
-  <p style="margin-bottom: 1.5em;">Wake the hell up, Samurai! We've got a city to burn and a page to find. But it looks like this part of the Net is just a ghost town.</p>
-  <p style="margin-bottom: 1.5em; color: #ff3796;">[ERROR CODE: 404 - PAGE NOT FOUND]</p>
-  <p style="margin-bottom: 1.5em;">The data you're jackin' for ain't here. Maybe it got wiped by a corpo netrunner, or perhaps it never existed. Either way, you've hit a dead end in Night City's cyberspace.</p>
-  <p style="margin-bottom: 1.5em; color: #29abe2;">>> What now, choom?</p>
-  <ul style="margin-bottom: 1.5em; list-style: none;">
-    <li>1. Double-check the URL - maybe your cyberware glitched out.</li>
-    <li>2. Use the mainframe search function - you've got the tools.</li>
-    <li>3. Hit the neon trail back to the homepage - sometimes retreat is the best option.</li>
-  </ul>
-  <p style="margin-bottom: 1.5em;">Whatever you decide, keep your eyes peeled and your ICE breakers ready. The Net's full of opportunities if you know where to look.</p>
-  <p style="margin-bottom: 1.5em;">Stay edgy. Stay alive. And if you can't find your path, make your own.</p>
-  <p style="margin-bottom: 1.5em; color: #ff3796;">— V, the Netrunning Nomad</p>
-`;
-
-const starfield_msg = `
-  <p style="margin-bottom: 1.5em; color: #ff3796;">-- TRANSMISSION ERROR: Data Not Found --</p>
-  <p style="margin-bottom: 1.5em;">Pilot, it seems your navigation systems are off-course. The sector you're trying to reach does not exist in our star charts. It's a vast universe out there, but this void is uncharted.</p>
-  <p style="margin-bottom: 1.5em; color: #29abe2;">[ERROR 404: Stellar Coordinates Missing]</p>
-  <p style="margin-bottom: 1.5em;">Maybe this is a glitch in the astrogation database, or perhaps you've stumbled upon an anomaly in the cosmic web. Don't drift into the abyss just yet.</p>
-  <p style="margin-bottom: 1.5em;">> Next steps for the lost traveler:</p>
-  <ul style="margin-bottom: 1.5em; list-style: none;">
-    <li>1. Re-calculate your coordinates; the right path might be a warp jump away.</li>
-    <li>2. Engage your ship's diagnostics to scan for any navigational errors.</li>
-    <li>3. Set course back to the spaceport home beacon - safety in familiar stars.</li>
-  </ul>
-  <p style="margin-bottom: 1.5em;">Remember, space is a frontier that often defies expectations. Each failed jump drive or missed connection is a chance to discover new horizons.</p>
-  <p style="margin-bottom: 1.5em;">Chart your course anew, explorer. Your odyssey among the stars is far from over, and the next planetfall could reveal untold stories.</p>
-  <p style="color: #ff3796;">-- End of transmission --</p>
-`;
-
-const rdr2_msg = `
-  <p style="margin-bottom: 1.5em; color: #ff3796;">-- ERROR 404: Trail's Gone Cold --</p>
-  <p style="margin-bottom: 1.5em;">Partner, looks like you've wandered off the map. The page you're searchin' for is like an old ghost town, silent and forgotten.</p>
-  <p style="margin-bottom: 1.5em;">Might be you're lookin' in the wrong place or it's been gobbled up by the sands of time, just like a tumbleweed lost in the prairie wind.</p>
-  <p style="margin-bottom: 1.5em;">Here’s how you can get back on the right path:</p>
-  <ul style="margin-bottom: 1.5em; list-style: none;">
-    <li>1. Double-check those coordinates. Could be you mistyped a letter or two.</li>
-    <li>2. Ask the local telegraph operator (aka the search bar) for directions.</li>
-    <li>3. Head on back to the homestead. Sometimes, the trail starts where you last rested.</li>
-  </ul>
-  <p style="margin-bottom: 1.5em;">The frontier is vast and full of unknowns, but don't let that deter you. Hitch up your wagon and set out again. There’s a whole world of discovery awaiting for those brave enough to keep searchin'.</p>
-  <p style="margin-bottom: 1.5em;">So, saddle up! Your next adventure is just over the next ridge.</p>
-  <p style="color: #29abe2;">-- Yer faithful trail companion, The Website Wrangler --</p>
-`;
-
-const darkSouls_msg = `
-  <p style="margin-bottom: 1.5em; color: #ff3796;">-- ERROR 404: BONFIRE NOT LIT --</p>
-  <p style="margin-bottom: 1.5em;">Ashen one, the page thou seeketh cannot be found. It is shrouded in darkness, a land forgotten by time, akin to the Abyss.</p>
-  <p style="margin-bottom: 1.5em;">Perhaps the link has been severed, a path obscured by the convolutions of the world. Seek ye a lantern, or cast light to dispel the shadows, and ensure thine URL is inscribed in true form.</p>
-  <p style="margin-bottom: 1.5em;">Venture forth, bearer of the curse, and let not this hindrance deter thee. For in the world of Lordran, the flames guide thee, and it is only by perseverance that one may find the way.</p>
-  <p style="margin-bottom: 1.5em;">If thou art truly lost, seek guidance by returning to the homepage, the sanctuary of thine journey's beginning.</p>
-  <p style="margin-bottom: 1.5em;">May the flames guide thee, and mayst thou find peace in thine quest for discovery, for the embers of a page once there linger in the strands of the web, waiting to be rekindled.</p>
-  <p style="color: #29abe2;">-- Thine Wayfarer of the Web --</p>
-`;
-
-
-const error_messages = [witcher_msg, cyberpunk_msg, starfield_msg, rdr2_msg, darkSouls_msg];
-const message = error_messages[Math.floor(Math.random() * error_messages.length)];
 ---
 
 <Layout title="Not found">
   <div class="grid justify-self-center justify-items-center w-full">
     <h1 class="text-3xl font-extrabold pb-4">404 - Not Found</h1>
-    <div class="text-m font-extrabold pb-4" set:html={message}></div>
+    
+    <!-- Hidden Messages -->
+    <div id="witcher_msg" class="hidden error-message">
+      { <p style="margin-bottom: 1.5em; color: #ff3796;">Halt, wanderer!</p>
+      <p style="margin-bottom: 1.5em;">Thou hast strayed from the known paths of the Continent into a forsaken nook of the vast Cyberspace, where not even the White Wolf dareth to roam. The page ye seek is hidden by an ancient curse, elusive as a specter in the moonlight, vanished into the mists of the interweb.</p>
+      <p style="margin-bottom: 1.5em;">Fear not, for your journey needn't end in this land of non-existence. Summon your resolve, brave traveler, and wield your mouse like a silver sword to combat this digital leshen. Retrace thy steps and consult the omniscient search bar, or invoke the incantations known as URLs to guide thee back to safer grounds.</p>
+      <p style="margin-bottom: 1.5em;">Should all else fail, beckon the guardians of this realm with the raven named "Refresh" or embark on a new quest by returning to the homepage.</p>
+      <p style="margin-bottom: 1.5em;">Remember, it is your destiny to find the path, for the world of the internet is vast and full of destinations.</p>
+      <p style="margin-bottom: 1.5em;">Go forth, and let the stars guide you, for this 404 error is but a mere signpost on your grand adventure.</p>
+      <p style="color: #29abe2;">– The Chronicler of Code</p>}
+    </div>
+    <div id="cyberpunk_msg" class="hidden error-message">
+      {<p style="margin-bottom: 1.5em; color: #29abe2;">--- Cybernetic Error Directive: Page Not Found ---</p>
+      <p style="margin-bottom: 1.5em;">Wake the hell up, Samurai! We've got a city to burn and a page to find. But it looks like this part of the Net is just a ghost town.</p>
+      <p style="margin-bottom: 1.5em; color: #ff3796;">[ERROR CODE: 404 - PAGE NOT FOUND]</p>
+      <p style="margin-bottom: 1.5em;">The data you're jackin' for ain't here. Maybe it got wiped by a corpo netrunner, or perhaps it never existed. Either way, you've hit a dead end in Night City's cyberspace.</p>
+      <p style="margin-bottom: 1.5em; color: #29abe2;">>> What now, choom?</p>
+      <ul style="margin-bottom: 1.5em; list-style: none;">
+        <li>1. Double-check the URL - maybe your cyberware glitched out.</li>
+        <li>2. Use the mainframe search function - you've got the tools.</li>
+        <li>3. Hit the neon trail back to the homepage - sometimes retreat is the best option.</li>
+      </ul>
+      <p style="margin-bottom: 1.5em;">Whatever you decide, keep your eyes peeled and your ICE breakers ready. The Net's full of opportunities if you know where to look.</p>
+      <p style="margin-bottom: 1.5em;">Stay edgy. Stay alive. And if you can't find your path, make your own.</p>
+      <p style="margin-bottom: 1.5em; color: #ff3796;">— V, the Netrunning Nomad</p>}
+    </div>
+    <div id="starfield_msg" class="hidden error-message">
+      {<p style="margin-bottom: 1.5em; color: #ff3796;">-- TRANSMISSION ERROR: Data Not Found --</p>
+      <p style="margin-bottom: 1.5em;">Pilot, it seems your navigation systems are off-course. The sector you're trying to reach does not exist in our star charts. It's a vast universe out there, but this void is uncharted.</p>
+      <p style="margin-bottom: 1.5em; color: #29abe2;">[ERROR 404: Stellar Coordinates Missing]</p>
+      <p style="margin-bottom: 1.5em;">Maybe this is a glitch in the astrogation database, or perhaps you've stumbled upon an anomaly in the cosmic web. Don't drift into the abyss just yet.</p>
+      <p style="margin-bottom: 1.5em;">> Next steps for the lost traveler:</p>
+      <ul style="margin-bottom: 1.5em; list-style: none;">
+        <li>1. Re-calculate your coordinates; the right path might be a warp jump away.</li>
+        <li>2. Engage your ship's diagnostics to scan for any navigational errors.</li>
+        <li>3. Set course back to the spaceport home beacon - safety in familiar stars.</li>
+      </ul>
+      <p style="margin-bottom: 1.5em;">Remember, space is a frontier that often defies expectations. Each failed jump drive or missed connection is a chance to discover new horizons.</p>
+      <p style="margin-bottom: 1.5em;">Chart your course anew, explorer. Your odyssey among the stars is far from over, and the next planetfall could reveal untold stories.</p>
+      <p style="color: #ff3796;">-- End of transmission --</p>}
+    </div>
+    <div id="rdr2_msg" class="hidden error-message">
+      {<p style="margin-bottom: 1.5em; color: #ff3796;">-- ERROR 404: Trail's Gone Cold --</p>
+      <p style="margin-bottom: 1.5em;">Partner, looks like you've wandered off the map. The page you're searchin' for is like an old ghost town, silent and forgotten.</p>
+      <p style="margin-bottom: 1.5em;">Might be you're lookin' in the wrong place or it's been gobbled up by the sands of time, just like a tumbleweed lost in the prairie wind.</p>
+      <p style="margin-bottom: 1.5em;">Here’s how you can get back on the right path:</p>
+      <ul style="margin-bottom: 1.5em; list-style: none;">
+        <li>1. Double-check those coordinates. Could be you mistyped a letter or two.</li>
+        <li>2. Ask the local telegraph operator (aka the search bar) for directions.</li>
+        <li>3. Head on back to the homestead. Sometimes, the trail starts where you last rested.</li>
+      </ul>
+      <p style="margin-bottom: 1.5em;">The frontier is vast and full of unknowns, but don't let that deter you. Hitch up your wagon and set out again. There’s a whole world of discovery awaiting for those brave enough to keep searchin'.</p>
+      <p style="margin-bottom: 1.5em;">So, saddle up! Your next adventure is just over the next ridge.</p>
+      <p style="color: #29abe2;">-- Yer faithful trail companion, The Website Wrangler --</p>}
+    </div>
+    <div id="darkSouls_msg" class="hidden error-message">
+      {<p style="margin-bottom: 1.5em; color: #ff3796;">-- ERROR 404: BONFIRE NOT LIT --</p>
+      <p style="margin-bottom: 1.5em;">Ashen one, the page thou seeketh cannot be found. It is shrouded in darkness, a land forgotten by time, akin to the Abyss.</p>
+      <p style="margin-bottom: 1.5em;">Perhaps the link has been severed, a path obscured by the convolutions of the world. Seek ye a lantern, or cast light to dispel the shadows, and ensure thine URL is inscribed in true form.</p>
+      <p style="margin-bottom: 1.5em;">Venture forth, bearer of the curse, and let not this hindrance deter thee. For in the world of Lordran, the flames guide thee, and it is only by perseverance that one may find the way.</p>
+      <p style="margin-bottom: 1.5em;">If thou art truly lost, seek guidance by returning to the homepage, the sanctuary of thine journey's beginning.</p>
+      <p style="margin-bottom: 1.5em;">May the flames guide thee, and mayst thou find peace in thine quest for discovery, for the embers of a page once there linger in the strands of the web, waiting to be rekindled.</p>
+      <p style="color: #29abe2;">-- Thine Wayfarer of the Web --</p>}
+    </div>
+
     <span class="block text-8xl p-8" role="img" aria-label="force hand wave">{icon}</span>
   </div>
+
+  <!-- Client-side JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var messages = document.querySelectorAll('.error-message');
+      var randomIndex = Math.floor(Math.random() * messages.length);
+      messages[randomIndex].classList.remove('hidden');
+    });
+  </script>
 </Layout>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
