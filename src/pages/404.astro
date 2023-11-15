@@ -1,10 +1,6 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
-
-const emoji = ["👁️‍🗨️", "🤚🏻", "🕸", "🌘", "🎴", "🃏", "🚬"];
-const icon = emoji[Math.floor(Math.random() * emoji.length)];
 ---
-
 <Layout title="Not found">
   <div class="grid justify-self-center justify-items-center w-full">
     <h1 class="text-3xl font-extrabold pb-4">404 - Not Found</h1>
@@ -73,15 +69,21 @@ const icon = emoji[Math.floor(Math.random() * emoji.length)];
       <p style="color: #29abe2;">-- Thine Wayfarer of the Web --</p>}
     </div>
 
-    <span class="block text-8xl p-8" role="img" aria-label="force hand wave">{icon}</span>
+    <span id="icon" class="block text-8xl p-8" role="img" aria-label="icon"></span>
   </div>
 
   <!-- Client-side JavaScript -->
   <script>
+    // Message
     document.addEventListener('DOMContentLoaded', function() {
       var messages = document.querySelectorAll('.error-message');
       var randomIndex = Math.floor(Math.random() * messages.length);
       messages[randomIndex].classList.remove('hidden');
+
+      // Randomly select an icon
+      var emoji = ["👁️‍🗨️", "🤚🏻", "🕸", "🌘", "🎴", "🃏", "🚬"];
+      var randomIconIndex = Math.floor(Math.random() * emoji.length);
+      document.getElementById('icon').textContent = emoji[randomIconIndex];
     });
   </script>
 </Layout>
