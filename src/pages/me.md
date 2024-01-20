@@ -4,7 +4,7 @@ description: A little info about me
 layout: ../layouts/PageLayout.astro
 ---
 
-# Greetings, I'm Besher AL ADDAM. 👋
+# More about me. 👋
 
 ## Tools I use.
 
