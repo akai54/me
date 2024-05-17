@@ -27,7 +27,7 @@ layout: ../layouts/PageLayout.astro
 - [Prettier](https://prettier.io/)
 - [React](https://react.dev/)
 - [Next.js](https://nextjs.org/)
-- [Railway](https://railway.app/)
+- [Railway](https://railway.app/)
 
 # Contact
 
