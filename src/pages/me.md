@@ -8,11 +8,11 @@ layout: ../layouts/PageLayout.astro
 
 ## Tools I use.
 
-- Editors: 
+- Editors:
   - [VSCodium](https://vscodium.com/)
   - [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/)
   - [Neovim](https://neovim.io/)
-- Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
+- Terminal: [Warp](https://www.warp.dev/)
 
 ## Tech things I like.
 
@@ -25,6 +25,9 @@ layout: ../layouts/PageLayout.astro
 - [Nala](https://gitlab.com/volian/nala)
 - [MongoDB](https://www.mongodb.com)
 - [Prettier](https://prettier.io/)
+- [React](https://react.dev/)
+- [Next.js](https://nextjs.org/)
+- [Railway](https://railway.app/)
 
 # Contact
 
