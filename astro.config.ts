@@ -9,6 +9,7 @@ import { remarkReadingTime } from "./remark-reading-time";
 import { codeBlocks } from "./integrations/code-blocks";
 import react from "@astrojs/react";
 import prefetch from "@astrojs/prefetch";
+import icon from "astro-icon";
 
 const AnchorLinkIcon = h(
   "svg",
@@ -66,5 +67,12 @@ export default defineConfig({
       ],
     ],
   },
-  integrations: [tailwind(), sitemap(), codeBlocks(), react(), prefetch()],
+  integrations: [
+    tailwind(),
+    sitemap(),
+    codeBlocks(),
+    react(),
+    prefetch(),
+    icon(),
+  ],
 });

@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ProjectContributions from "../content/projects/projects.json";
+---
+
+<Layout title="Projects" description="Here are all of my projects">
+    <section class="flex flex-col mt-8">
+        <h1 class="text-2xl sm:text-3xl font-bold mb-5">Projects</h1>
+        <h2 class="text-black dark:text-zinc-300 mb-5">
+            Here, you will find a compilation of projects that I have personally
+            created or collaborated on.
+        </h2>
+    </section>
+    <ul class="grid grid-cols-1 gap-8">
+        {ProjectContributions.map((project) => (
+            <ProjectCard
+                name={project.name}
+                description={project.description}
+                role={project.role}
+                url={project.url}
+                languages={project.languages}
+                icon={project.icon}
+            />
+        ))}
+    </ul>
+</Layout>

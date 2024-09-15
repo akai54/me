@@ -1,0 +1,98 @@
+[
+  {
+    "name": "OpenSSL",
+    "url": "https://github.com/openssl/openssl",
+    "description": " TLS/SSL and crypto library ",
+    "languages": ["C"],
+    "role": "contributor",
+    "icon": "github"
+  },
+  {
+    "name": "simple-password-manager",
+    "url": "https://github.com/akai54/simple-password-manager",
+    "description": "Simple minimalistic password manager written in python. ",
+    "languages": ["Python"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
+    "name": "github-profile-summary-cards",
+    "url": "https://github.com/vn7n24fzkq/github-profile-summary-cards",
+    "description": " A tool to generate your github summary card for profile README.",
+    "languages": ["TypeScript"],
+    "role": "contributor",
+    "icon": "github"
+  },
+  {
+    "name": "Pig-game",
+    "url": "https://beshoux.neocities.org/pig-game/",
+    "description": "A simple dice pig-game.",
+    "languages": ["JavaScript"],
+    "role": "maintainer",
+    "icon": "javascript"
+  },
+  {
+    "name": "2077.nvim",
+    "url": "https://github.com/akai54/2077.nvim",
+    "description": "An attempt to make a Cyberpunk Color scheme for Neovim.",
+    "languages": ["Lua"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
+    "name": "Simon-game",
+    "url": "https://beshoux.neocities.org/simon/",
+    "description": "A simple dice simon-game.",
+    "languages": ["JavaScript"],
+    "role": "maintainer",
+    "icon": "javascript"
+  },
+  {
+    "name": "Tindog",
+    "url": "https://beshoux.neocities.org/tindog/",
+    "description": "Tindog, the tinder for dogs that helps pet owners find the perfect playmate for their furry friend.",
+    "languages": ["Bootstrap"],
+    "role": "maintainer",
+    "icon": "bootstrap"
+  },
+  {
+    "name": "Dragonball",
+    "url": "https://github.com/akai54/Dragonball",
+    "description": "A minimalistic try to make a dragon ball fighter game with 2 players in JavaScript.",
+    "languages": ["JavaScript"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
+    "name": "Mapty",
+    "url": "https://beshoux.neocities.org/mapty/",
+    "description": "A JavaScript-based workout map application to track and store exercise locations.",
+    "languages": ["JavaScript"],
+    "role": "maintainer",
+    "icon": "javascript"
+  },
+  {
+    "name": "compiler",
+    "url": "https://github.com/akai54/compiler",
+    "description": "A compiler for a very simple language.",
+    "languages": ["Ocaml"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
+    "name": "Bankist-site",
+    "url": "https://beshoux.neocities.org/bankist-site/",
+    "description": "A simple website for a bank.",
+    "languages": ["JavaScript"],
+    "role": "maintainer",
+    "icon": "javascript"
+  },
+  {
+    "name": "Bankist-app",
+    "url": "https://beshoux.neocities.org/bankist/",
+    "description": "A simple application that simulates a real bank account. Try these accounts: ID:js pwd:1111,ID: jd pwd:2222,ID: stw pwd:3333,ID: ss pwd:4444",
+    "languages": ["JavaScript"],
+    "role": "maintainer",
+    "icon": "javascript"
+  }
+]
