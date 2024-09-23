@@ -1,5 +1,93 @@
 [
   {
+    "name": "react-quiz",
+    "url": "https://beshoux.neocities.org/react-quiz/",
+    "description": "Web app to test React developpers knowledge.",
+    "languages": ["React"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
+    "name": "classy-weather",
+    "url": "https://beshoux.neocities.org/classy-weather/",
+    "description": "Web app to check the weather of a city.",
+    "languages": ["React", "Open Meteo API"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
+    "name": "usepopcorn",
+    "url": "https://beshoux.neocities.org/usePopcorn/",
+    "description": "Web app to keep track of watched movies/series.",
+    "languages": ["React", "OMDb API"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
+    "name": "travel-list",
+    "url": "https://beshoux.neocities.org/travel-list/",
+    "description": "Web app to keep track of objects to pack for a trip.",
+    "languages": ["React"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
+    "name": "Admin-dashboard",
+    "url": "https://github.com/akai54/admin-dashboard",
+    "description": "Display and search through all authenticated users in the database.",
+    "languages": ["Next.js", "TypeScript", "React", "Railway", "NextAuth"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
+    "name": "Azure QR Code Generator",
+    "url": "https://github.com/akai54/azure-qr-code-generator",
+    "description": "Web app deployed on Azure to generate QR codes for provided URLs",
+    "languages": ["Next.js", "Azure", "QR Codes", "Node.js", "Express"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
+    "name": "Simple Game",
+    "url": "https://github.com/akai54/simpleGame",
+    "description": "Establish tests for a game in Java using Pitest",
+    "languages": ["Java", "Pitest", "Maven"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
+    "name": "Assasins scrapy",
+    "url": "https://github.com/akai54/assasins_scrapy",
+    "description": "Scrapper to get quotes of main characters from the Assasins Creed fandom.",
+    "languages": ["Python", "Scrapy", "Digital Ocean", "scrapeops.io"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
+    "name": "Natours",
+    "url": "https://natours-beshoux-910ef8cf7864.herokuapp.com/",
+    "description": "Web App of tour bookings.",
+    "languages": ["Node.js", "Express", "MongoDB", "Pug"],
+    "role": "maintainer",
+    "icon": "heroku"
+  },
+  {
+    "name": "ConcGym",
+    "url": "https://github.com/akai54/concgym",
+    "description": "A multi-threaded simulation of a Gym.",
+    "languages": ["Java"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
+    "name": "Verifast Factory",
+    "url": "https://github.com/akai54/verifastfactory",
+    "description": "A simple simulation of a factory implementation.",
+    "languages": ["Java"],
+    "role": "maintainer",
+    "icon": "github"
+  },
+  {
     "name": "OpenSSL",
     "url": "https://github.com/openssl/openssl",
     "description": " TLS/SSL and crypto library ",

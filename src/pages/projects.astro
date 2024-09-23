@@ -12,16 +12,18 @@ import ProjectContributions from "../content/projects/projects.json";
             created or collaborated on.
         </h2>
     </section>
-    <ul class="grid grid-cols-1 gap-8">
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {ProjectContributions.map((project) => (
-            <ProjectCard
-                name={project.name}
-                description={project.description}
-                role={project.role}
-                url={project.url}
-                languages={project.languages}
-                icon={project.icon}
-            />
+            <li class="transform transition-transform hover:scale-105">
+                <ProjectCard
+                    name={project.name}
+                    description={project.description}
+                    role={project.role}
+                    url={project.url}
+                    languages={project.languages}
+                    icon={project.icon}
+                />
+            </li>
         ))}
     </ul>
 </Layout>
