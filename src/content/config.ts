@@ -11,6 +11,12 @@ const TagSchema = z.enum([
   "stripe",
   "tailwindcss",
   "typescript",
+  "python",
+  "tensorFlow",
+  "keras",
+  "conda",
+  "dependency_management",
+  "machine_learning",
 ]);
 
 export type Step = { href: string; title: string };
