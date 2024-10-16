@@ -1,5 +1,5 @@
 ---
-title: Install last version of TF and Keras using Conda
+title: Install Keras3 with TensorFlow using Conda
 description: While trying to install the latest version of Keras (3.4.1) with TensorFlow,I ran into some dependency issues that many evelopers might find frustrating.After a bit of troubleshooting, I was able to solve the problem and thought I'd share the solution here in case it helps anyone facing similar challenges.
 tags:
   - tensorFlow
@@ -19,7 +19,7 @@ imageCreditName: Keras's Blog
 imageCreditUrl: https://blog.keras.io/img/keras-tensorflow-logo.jpg
 ---
 
-# Install last version of TensorFlow and Keras using Conda
+# Install Keras3 with TensorFlow using Conda
 
 While trying to install the latest version of [Keras](https://keras.io/) (3.4.1) with [TensorFlow](https://www.tensorflow.org/?hl=fr), I ran into some dependency issues that many developers might find frustrating. After a bit of troubleshooting, I was able to solve the problem and thought I'd share the solution here in case it helps anyone facing similar challenges.
 
