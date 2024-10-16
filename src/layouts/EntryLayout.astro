@@ -16,15 +16,16 @@ interface Props {
 const { minutesToRead, entry } = Astro.props;
 
 const estimatedReadingTime = Math.floor(minutesToRead);
-const books = "📚".repeat(Math.floor(estimatedReadingTime / 3));
 const publishDate = entry.data.publishedOn.toLocaleDateString("en-us", {
   year: "numeric",
   month: "long",
   day: "numeric",
 });
 
+const isHomePage = entry.data?.tutorial?.homePage ?? false;
 const fullUrl = `https://beshoux.neocities.org/${entry.collection}/${entry.slug}/`;
-const githubEditPath = `/src/content/${entry.collection}/${entry.slug}.md`;
+console.log(entry.slug)
+const githubEditPath = `/src/content/${entry.collection}/${entry.slug}${isHomePage? '/index' : ''}.md`;
 
 const headings: MarkdownHeading[] = [
   { depth: 2, slug: "overview", text: "Overview" },
@@ -90,7 +91,7 @@ const headings: MarkdownHeading[] = [
       <time datetime={entry.data.publishedOn.toString()}>{publishDate}</time>
       <span class="px-2">{" • "}</span>
       <span>
-        {books}
+        📚
         {estimatedReadingTime} min read
       </span>
       <span class="px-2">{" • "}</span>
