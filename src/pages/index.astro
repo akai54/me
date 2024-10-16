@@ -5,6 +5,14 @@ import PostCard from "../components/PostCard.astro";
 import { getCollection } from "astro:content";
 import profile from "../images/profile.jpg";
 
+// Utility function to truncate text
+/*const truncateText = (text: string, maxLength: number) => {
+  if (text.length > maxLength) {
+    return text.slice(0, maxLength) + '...'; // Add ellipsis if truncated
+  }
+  return text;
+}; */
+
 const latestTutorialEntry = (
   await getCollection("tutorials", (entry) => {
     // Exclude draft posts in production
@@ -59,7 +67,7 @@ const latestBlogEntry = (
   <div class="grid sm:grid-cols-2 gap-12 justify-items-center items-start">
     {
       latestTutorialEntry && (
-        <div>
+        <div class="mb-8" >
           <h2 class="text-2xl font-semibold text-purple-600 dark:text-purple-400 pb-4 text-center">
             Featured Tutorial
           </h2>
@@ -78,7 +86,7 @@ const latestBlogEntry = (
 
     {
       latestBlogEntry && (
-        <div>
+        <div class="mb-8">
           <h2 class="text-2xl font-semibold text-purple-600 dark:text-purple-400 pb-4 text-center">
             Featured Blog Post
           </h2>
