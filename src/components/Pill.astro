@@ -9,7 +9,9 @@ type Color =
   | "teal"
   | "blue"
   | "purple"
-  | "pink";
+  | "pink"
+  | "lime"
+  | "gray";
 
 interface Props {
   // Use tag type
@@ -28,6 +30,9 @@ const tagMapping: { [key in Tag]: Color } = {
   stripe: "blue",
   tailwindcss: "teal",
   typescript: "blue",
+  python: "green",
+  machine_learning: "lime",
+  dependency_management: "gray"
 };
 
 const { tag, color } = Astro.props;
@@ -41,6 +46,8 @@ const colorClasses: { [key in Color]: string } = {
   blue: "bg-blue-300 text-blue-800",
   purple: "bg-purple-300 text-purple-800",
   pink: "bg-pink-300 text-pink-800",
+  lime: "bg-lime-300 text-lime-800",
+  gray: "bg-gray-300 text-gray-800",
 };
 
 let pillClasses = colorClasses.yellow;
