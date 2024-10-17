@@ -2,9 +2,11 @@
 import Badge from "./Badge.astro";
 import { Icon } from "astro-icon/components";
 
+const isBrowser = typeof window !== "undefined";
+
 interface Props {
     name: string;
-    role: "author" | "contributor" | "maintainer" | string;
+    role: "contributor" | "maintainer";
     url: string;
     description?: string;
     languages: string[];
@@ -12,30 +14,31 @@ interface Props {
 }
 
 const colors = {
-    maintainer: "pink",
-    author: "gradient-indigo",
-    contributor: "yellow",
+    maintainer: "lightPink",
+    contributor: "lightYellow",
 };
 
 const { name, role, url, description, languages, icon } = Astro.props;
+
+isBrowser && console.log(localStorage.getItem("theme"));
 ---
 
-<li class="dark:bg-zinc-800 bg-zinc-700 text-zinc-400 gap-1 p-6 border border-zinc-700/60 rounded-lg flex flex-col">
+<li class="dark:bg-zinc-800 bg-gray-50 dark:text-zinc-400 text-gray-800 gap-1 p-6 border border-zinc-700/60 rounded-lg flex flex-col overflow-hidden">
     <div class="flex justify-between">
         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
-            <h3 class="text-lg font-medium text-white">{name}</h3>
+            <h3 class="text-lg font-medium dark:text-white w-s">{name}</h3> 
             <Badge text={role} color={colors[role]} />
         </div>
         
     </div>
     {description && (
-        <p class="leading-relaxed text-zinc-400 dark:text-zinc-400">
+        <p class="leading-relaxed text-black dark:text-zinc-400">
             {description}
         </p>
     )}
     <ul class="flex flex-wrap gap-2 mt-2">
         {languages.map((item) => (
-            <li class="dark:bg-zinc-700 bg-zinc-600 dark:text-zinc text-white rounded-md px-2 py-1 text-sm">
+            <li class="dark:bg-zinc-700 bg-cyan-300 dark:text-zinc-400 text-cyan-900 rounded-md px-2 py-1 text-sm">
                 {item}
             </li>
         ))}
