@@ -22,7 +22,7 @@ const filteredPosts = (await getCollection('blog', ({ data }) => data.tags.inclu
     title={`Posts tagged "${formattedTag}"`}
     description={`All blog posts and tutorials tagged with ${formattedTag}`}
 >
-    <h1 class="text-3xl font-extrabold pb-4">Posts tagged "{formattedTag}"</h1>
+    <h1 class="text-3xl font-extrabold pb-4">Posts tagged <span class="text-purple-600 dark:text-purple-400">{formattedTag}</span></h1>
     <p class="pb-8 dark:text-zinc-300">
         All content related to {formattedTag}
     </p>

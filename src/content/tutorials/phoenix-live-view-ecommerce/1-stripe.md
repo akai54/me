@@ -6,6 +6,7 @@ tags:
   - elixir
   - phoenix
   - tailwindcss
+  - dependency_management
 publishedOn: 2022-12-07
 draft: true
 tutorial:

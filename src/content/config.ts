@@ -12,7 +12,7 @@ const TagSchema = z.enum([
   "tailwindcss",
   "typescript",
   "python",
-  "tensorFlow",
+  "tensorflow",
   "keras",
   "conda",
   "dependency_management",
