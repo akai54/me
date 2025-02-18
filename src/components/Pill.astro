@@ -68,7 +68,7 @@ class:list={[
     "hover:opacity-80 transition-opacity duration-200",
     pillClasses,
 ]}
-onclick={`event.stopPropagation(); window.location.href = '/tag/${tag}/'`}
+onclick={`event.stopPropagation(); event.preventDefault(); window.location.href = '/tag/${tag}/'`}
 >
 <slot />
 </span>
