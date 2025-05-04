@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { getCollection } from "astro:content";
+
+const tutorialEntries = (
+  await getCollection("translations", (entry) => {
+    // Exclude draft posts in production
+    if (import.meta.env.PROD && entry.data.draft) {
+      return false;
+    }
+
+    return entry.data.translation.homePage;
+  })
+).sort((a, b) => b.data.publishedOn.getTime() - a.data.publishedOn.getTime());
+---
+
+<BaseLayout title="Translations" description="Developement translations">
+  <h1 class="text-3xl font-extrabold pb-4">Development Translations</h1>
+  <p class="pb-8 dark:text-zinc-300">This blog will be a collection of my musings and insights.</p>
+
+  <hr class="py-6 border-zinc-300 dark:border-zinc-600" />
+
+  <div class="grid sm:grid-cols-2 gap-6 justify-items-center items-start">
+    {
+      tutorialEntries.map((entry) => (
+        <PostCard
+          href={`/translations/${entry.slug}/`}
+          imageSrc={entry.data.imageSrc}
+          imageAlt={entry.data.imageAlt}
+          tags={entry.data.tags}
+          title={entry.data.title}
+          description={entry.data.description}
+        />
+      ))
+    }
+  </div>
+</BaseLayout>

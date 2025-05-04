@@ -56,10 +56,24 @@ export const tutorialsSchema = (context: SchemaContext) =>
     }),
   });
 
+export const translationsSchema = (context: SchemaContext) =>
+  blogSchema(context).extend({
+    translation: z.object({
+      originalTitle: z.string(),
+      originalLanguage: z.string(),
+      title: z.string(),
+      originalAuthor: z.string(),
+      slug: z.string(),
+      homePage: z.boolean().optional(),
+    }),
+  });
+
 const blogCollection = defineCollection({ schema: blogSchema });
 const tutorialsCollection = defineCollection({ schema: tutorialsSchema });
+const translationsCollection = defineCollection({ schema: translationsSchema });
 
 export const collections = {
   blog: blogCollection,
   tutorials: tutorialsCollection,
+  translations: translationsCollection,
 };

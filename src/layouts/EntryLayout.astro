@@ -24,7 +24,6 @@ const publishDate = entry.data.publishedOn.toLocaleDateString("en-us", {
 
 const isHomePage = entry.data?.tutorial?.homePage ?? false;
 const fullUrl = `https://beshoux.neocities.org/${entry.collection}/${entry.slug}/`;
-console.log(entry.slug)
 const githubEditPath = `/src/content/${entry.collection}/${entry.slug}${isHomePage? '/index' : ''}.md`;
 
 const headings: MarkdownHeading[] = [

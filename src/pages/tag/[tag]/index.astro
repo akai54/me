@@ -6,7 +6,8 @@ import PostCard from '../../../components/PostCard.astro';
 export async function getStaticPaths() {
     const blogEntries = await getCollection('blog');
     const tutorialEntries = await getCollection('tutorials');
-    const allTags = [...blogEntries, ...tutorialEntries].flatMap(post => post.data.tags);
+    const translationsEntries = await getCollection('translations');
+    const allTags = [...blogEntries, ...tutorialEntries, ...translationsEntries].flatMap(post => post.data.tags);
     return [...new Set(allTags)].map(tag => ({ params: { tag } }));
 }
 
@@ -15,6 +16,7 @@ const formattedTag = tag.replace(/_/g, ' ');
 
 const filteredPosts = (await getCollection('blog', ({ data }) => data.tags.includes(tag)))
     .concat(await getCollection('tutorials', ({ data }) => data.tags.includes(tag)))
+    .concat(await getCollection('translations', ({ data }) => data.tags.includes(tag)))
     .sort((a, b) => b.data.publishedOn.valueOf() - a.data.publishedOn.valueOf());
 ---
 
