@@ -70,3 +70,50 @@ div[data-remark-code-title] ~ .code-block-copy-button {
 div[data-remark-code-title] ~ pre {
   @apply rounded-t-none;
 }
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+  font-family: "IBM Plex Sans Arabic", "Amiri", "Scheherazade", sansserif;
+  font-size: large;
+}
+
+.rtl .prose {
+  text-align: right;
+}
+
+.rtl .prose ul,
+.rtl .prose ol {
+  padding-right: 1.5em;
+  padding-left: 0;
+}
+
+.rtl .prose blockquote {
+  border-right: 0.25em solid #e5e7eb;
+  border-left: none;
+  padding-right: 1em;
+  padding-left: 0;
+  background-color: #f0f4f8; /* Light blue background */
+  border-right-color: #4299e1; /* Blue border */
+  color: #2d3748; /* Dark gray text */
+}
+
+.dark .rtl .prose blockquote {
+  background-color: #2d3748; /* Dark gray background */
+  border-right-color: #63b3ed; /* Light blue border */
+  color: #e2e8f0; /* Light gray text */
+}
+
+.rtl .heading-wrapper {
+  direction: ltr; /* Keep anchor links LTR */
+}
+
+.rtl .anchor-link {
+  float: left;
+  margin-right: 0.5em;
+  margin-left: 0;
+}
+
+.rtl-colored {
+  color: #db2777;
+}

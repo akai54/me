@@ -5,7 +5,7 @@ import EntryLayout from "../../layouts/EntryLayout.astro";
 import { HeadingsSchema, MinutesToReadSchema } from "../../content/config";
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection("translations", (entry) => {
+  const translationEntries = await getCollection("translations", (entry) => {
     // Exclude draft posts in production
     if (import.meta.env.PROD && entry.data.draft) {
       return false;
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     return true;
   });
 
-  return blogEntries.map((entry) => ({
+  return translationEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
@@ -32,6 +32,9 @@ const minutesToRead = MinutesToReadSchema.parse(
 );
 
 const entryHeadings = HeadingsSchema.parse(headings);
+
+// Check if the original language is Arabic
+const isRTL = entry.data.translation.targetLanguage === "Arabic";
 ---
 
 <EntryLayout
@@ -39,5 +42,10 @@ const entryHeadings = HeadingsSchema.parse(headings);
   entry={entry}
   headings={entryHeadings}
 >
-  <Content />
+  <div class:list={[
+    "prose dark:prose-invert max-w-none",
+    { "rtl": isRTL } // Add rtl class if the language is Arabic
+  ]}>
+    <Content />
+  </div>
 </EntryLayout>

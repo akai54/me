@@ -17,6 +17,10 @@ const TagSchema = z.enum([
   "conda",
   "dependency_management",
   "machine_learning",
+  "blockchain",
+  "nft",
+  "cryptocurrency",
+  "web3",
 ]);
 
 export type Step = { href: string; title: string };
@@ -61,6 +65,7 @@ export const translationsSchema = (context: SchemaContext) =>
     translation: z.object({
       originalTitle: z.string(),
       originalLanguage: z.string(),
+      targetLanguage: z.string(),
       title: z.string(),
       originalAuthor: z.string(),
       slug: z.string(),

@@ -30,6 +30,9 @@ const headings: MarkdownHeading[] = [
   { depth: 2, slug: "overview", text: "Overview" },
   ...Astro.props.headings,
 ].filter(({ depth }) => depth < 4);
+
+const isRTL = entry.collection === "translations" && 
+              entry.data.translation.targetlLanguage === "Arabic";
 ---
 
 <BaseLayout
@@ -124,10 +127,18 @@ const headings: MarkdownHeading[] = [
 
   <slot name="tutorial-steps" />
 
-  <article class="prose max-w-none dark:prose-invert">
-    <h2 class="sr-only" id="introduction"></h2>
-    <slot />
-  </article>
+  <div class:list={[
+    isRTL ? "rtl" : "ltr",
+    "min-h-screen"
+  ]}>
+    <article class:list={[
+      "prose dark:prose-invert max-w-none",
+      { "rtl": isRTL }
+    ]}>
+      <h2 class="sr-only" id="introduction"></h2>
+      <slot />
+    </article>
+  </div>
 
   <slot name="step-buttons" />
 
