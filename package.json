@@ -9,7 +9,8 @@
     "build": "astro build && jampack ./dist",
     "preview": "astro preview",
     "typecheck": "tsc",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "neocities push dist"
   },
   "dependencies": {
     "@astrojs/prefetch": "^0.4.0",
