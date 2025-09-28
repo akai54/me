@@ -117,3 +117,20 @@ div[data-remark-code-title] ~ pre {
 .rtl-colored {
   color: #db2777;
 }
+
+/* Reduce space between footnotes */
+.footnotes {
+  direction: rtl;
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+}
+.footnotes ol {
+  margin: 0;
+  padding-right: 1em;
+  padding: 0;
+}
+.footnotes li {
+  margin: 0;
+  padding: 0;
+}
