@@ -2,4 +2,4 @@
 
 My personal website.
 
-![](src/images/website.png)
+![Screenshot of my website](src/images/website.png)
