@@ -8,7 +8,6 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { remarkReadingTime } from './remark-reading-time';
 import { codeBlocks } from './integrations/code-blocks';
 import react from '@astrojs/react';
-import prefetch from '@astrojs/prefetch';
 import icon from 'astro-icon';
 
 const AnchorLinkIcon = h(
@@ -67,5 +66,6 @@ export default defineConfig({
       ],
     ],
   },
-  integrations: [tailwind(), sitemap(), codeBlocks(), react(), prefetch(), icon()],
+  integrations: [tailwind(), sitemap(), codeBlocks(), react(), icon()],
+  prefetch: true,
 });

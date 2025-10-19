@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@astrojs/prefetch':
-        specifier: ^0.4.0
-        version: 0.4.1
       '@astrojs/react':
         specifier: ^3.0.2
         version: 3.6.3(@types/node@24.8.1)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(lightningcss@1.30.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.44.0)
@@ -134,10 +131,6 @@ packages:
     resolution: {integrity: sha512-q7vdIqzYhxpsfghg2YmkmSXCfp4w7lBTYP+SSHw89wVhC5Riltr3u8w2otBRxNLSByNi+ht/gGkFC23Shetytw==}
     peerDependencies:
       astro: ^3.0.0
-
-  '@astrojs/prefetch@0.4.1':
-    resolution: {integrity: sha512-bpC875BqeIuWVgqhi4X814ftzzbKocaLkiZczaj8k5J2SRpueIGkww3XmD+yY/Ekkm9j30aS3neVO6wSm4IJNA==}
-    deprecated: '@astrojs/prefetch is deprecated in favor of the builtin prefetch option. Please see the migration guide for more information: https://docs.astro.build/en/guides/prefetch/#migrating-from-astrojsprefetch'
 
   '@astrojs/prism@3.3.0':
     resolution: {integrity: sha512-q8VwfU/fDZNoDOf+r7jUnMC2//H2l0TuQ6FkGJL8vD8nw/q5KiL3DS1KKBI3QhI9UQhpJ5dc7AtqfbXWuOgLCQ==}
@@ -4384,10 +4377,6 @@ snapshots:
       vfile: 5.3.7
     transitivePeerDependencies:
       - supports-color
-
-  '@astrojs/prefetch@0.4.1':
-    dependencies:
-      throttles: 1.0.1
 
   '@astrojs/prism@3.3.0':
     dependencies:
