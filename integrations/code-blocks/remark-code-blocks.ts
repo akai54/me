@@ -1,4 +1,3 @@
-import type * as shiki from 'shiki';
 import { createHighlighter } from 'shiki';
 import { visit } from 'unist-util-visit';
 import heexLanguageGrammar from './heex_syntax.json';
@@ -36,22 +35,11 @@ const remarkShiki = async () => {
   if (!highlighterAsync) {
     highlighterAsync = createHighlighter({
       themes,
-      langs,
-    }).then((hl) => {
-      return hl;
+      langs: [...langs, heexLanguageGrammar as any],
     });
     highlighterCacheAsync.set(cacheID, highlighterAsync);
   }
   const highlighter = await highlighterAsync;
-
-  const heexLanguage = {
-    id: 'heex',
-    scopeName: 'source.heex',
-    grammar: heexLanguageGrammar,
-    aliases: ['heex'],
-  };
-
-  await highlighter.loadLanguage(heexLanguage as any);
 
   // TODO: It would be SICK to use react for this.
   return () => (tree: any) => {
@@ -180,7 +168,7 @@ function buildBlock({
 
   // Add "user-select: none;" for "+"/"-" diff symbols
   if (lang === 'diff') {
-    html = html.replace(
+    html = html.replaceAll(
       /<span class="line"><span style="(.*?)">([\+|\-])/g,
       '<span class="line"><span style="$1"><span style="user-select: none;">$2</span>'
     );
