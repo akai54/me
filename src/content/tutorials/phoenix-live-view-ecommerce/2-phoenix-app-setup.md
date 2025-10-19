@@ -40,7 +40,7 @@ Choose `yes` to install dependencies and follow the instructions to start the ap
 Once running, let's open [`http://localhost:4000/`](http://localhost:4000/) to see
 the phoenix welcome page 😎.
 
-![Phoenix default page](./images/phoenix-default.png "Phoenix default page")
+![Phoenix default page](./images/phoenix-default.png 'Phoenix default page')
 
 ## Install Dependencies
 

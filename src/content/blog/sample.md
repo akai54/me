@@ -48,7 +48,7 @@ This sample use [github flavored markdown](https://github.github.com/gfm/).
 
 We can also use [link references].
 
-[link references]: /url "title"
+[link references]: /url 'title'
 
 This paragraph is part of the preceding list item.
 
@@ -140,7 +140,7 @@ div[data-highlighted] > div#twenty-four {
 You can render plain inline code blocks or sytax highlighted inline code blocks.
 
 ```js
-console.log("Hello there!");
+console.log('Hello there!');
 ```
 
 - Plain — `plain-text`

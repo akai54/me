@@ -1,5 +1,5 @@
 import type * as shiki from 'shiki';
-import { getHighlighter } from 'shiki';
+import { createHighlighter } from 'shiki';
 import { visit } from 'unist-util-visit';
 import heexLanguageGrammar from './heex_syntax.json';
 
@@ -8,16 +8,36 @@ import heexLanguageGrammar from './heex_syntax.json';
  * cache it here as much as possible. Make sure that your highlighters can be cached, state-free.
  * We make this async, so that multiple calls to parse markdown still share the same highlighter.
  */
-const highlighterCacheAsync = new Map<string, Promise<shiki.Highlighter>>();
+const highlighterCacheAsync = new Map<string, Promise<any>>();
 
 const THEME = 'github-dark';
 
 const remarkShiki = async () => {
   const themes = [THEME];
+  const langs = [
+    'javascript',
+    'typescript',
+    'jsx',
+    'tsx',
+    'css',
+    'html',
+    'elixir',
+    'bash',
+    'shell',
+    'diff',
+    'json',
+    'markdown',
+    'yaml',
+    'toml',
+    'plaintext',
+  ];
   const cacheID = themes.join('-');
   let highlighterAsync = highlighterCacheAsync.get(cacheID);
   if (!highlighterAsync) {
-    highlighterAsync = getHighlighter({ themes }).then((hl) => {
+    highlighterAsync = createHighlighter({
+      themes,
+      langs,
+    }).then((hl) => {
       return hl;
     });
     highlighterCacheAsync.set(cacheID, highlighterAsync);
@@ -145,10 +165,10 @@ function buildBlock({
   lang,
   highlighter,
 }: {
-  theme: shiki.Theme;
+  theme: string;
   code: string;
   lang: string;
-  highlighter: shiki.Highlighter;
+  highlighter: any;
 }): string {
   let html = highlighter.codeToHtml(code, { lang, theme });
 

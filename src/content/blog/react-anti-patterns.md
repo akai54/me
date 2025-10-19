@@ -27,7 +27,7 @@ Testable code is usually easier to read, so write tests! 🧪
 
 I first started writing React after reading a book on design patterns, and the first chapter was on Inheritance.
 
-!['Headfirst Design Patterns Book'](./images/headfirst-design-patterns.jpg "Headfirst Design Patterns")
+!['Headfirst Design Patterns Book'](./images/headfirst-design-patterns.jpg 'Headfirst Design Patterns')
 
 > Great book, worth the read 👍🏼
 
@@ -46,7 +46,7 @@ class Base extends React.Component {
   }
 
   render() {
-    throw new Error("SHOULD NEVER GET HERE");
+    throw new Error('SHOULD NEVER GET HERE');
   }
 }
 

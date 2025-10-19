@@ -39,7 +39,7 @@ function hi() {
 
 ```js
 function hi() {
-  console.log("hello");
+  console.log('hello');
 }
 ```
 

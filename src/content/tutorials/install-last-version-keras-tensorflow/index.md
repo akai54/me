@@ -39,7 +39,7 @@ The conflict involved dependencies between **`tensorboard`** and **`bleach`**, a
 Here's how I fixed the issue:
 
 1. **Update Conda**: First, I ensured that Conda was up to date to avoid any versioning conflicts.
-> Do not forget to deactivate the running conda environment.
+   > Do not forget to deactivate the running conda environment.
 
 ```bash
 conda update conda
@@ -54,7 +54,7 @@ conda activate tf_keras_env
 ```
 
 3. **Install TensorFlow and Keras with Conda**: Instead of using pip, I wanted to keep using  
-`conda` to install TensorFlow and Keras, which handled the dependencies much better.
+   `conda` to install TensorFlow and Keras, which handled the dependencies much better.
 
 ```bash
 conda install tensorflow==2.17.0 keras==3.4.1
