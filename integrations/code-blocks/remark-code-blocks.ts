@@ -1,7 +1,7 @@
-import type * as shiki from "shiki";
-import { getHighlighter } from "shiki";
-import { visit } from "unist-util-visit";
-import heexLanguageGrammar from "./heex_syntax.json";
+import type * as shiki from 'shiki';
+import { getHighlighter } from 'shiki';
+import { visit } from 'unist-util-visit';
+import heexLanguageGrammar from './heex_syntax.json';
 
 /**
  * getHighlighter() is the most expensive step of Shiki. Instead of calling it on every page,
@@ -10,11 +10,11 @@ import heexLanguageGrammar from "./heex_syntax.json";
  */
 const highlighterCacheAsync = new Map<string, Promise<shiki.Highlighter>>();
 
-const THEME = "github-dark";
+const THEME = 'github-dark';
 
 const remarkShiki = async () => {
   const themes = [THEME];
-  const cacheID = themes.join("-");
+  const cacheID = themes.join('-');
   let highlighterAsync = highlighterCacheAsync.get(cacheID);
   if (!highlighterAsync) {
     highlighterAsync = getHighlighter({ themes }).then((hl) => {
@@ -25,17 +25,17 @@ const remarkShiki = async () => {
   const highlighter = await highlighterAsync;
 
   const heexLanguage = {
-    id: "heex",
-    scopeName: "source.heex",
+    id: 'heex',
+    scopeName: 'source.heex',
     grammar: heexLanguageGrammar,
-    aliases: ["heex"],
+    aliases: ['heex'],
   };
 
   await highlighter.loadLanguage(heexLanguage as any);
 
   // TODO: It would be SICK to use react for this.
   return () => (tree: any) => {
-    visit(tree, "inlineCode", (node, index, parent) => {
+    visit(tree, 'inlineCode', (node, index, parent) => {
       let lang: string | null = null;
 
       const inlineCodeRegex = /(.+)__(.+)/;
@@ -57,68 +57,62 @@ const remarkShiki = async () => {
       const langExists = highlighter.getLoadedLanguages().includes(lang as any);
 
       if (!langExists) {
-        console.warn(
-          `The language "${lang}" doesn't exist, halting syntax highlighting.`
-        );
+        console.warn(`The language "${lang}" doesn't exist, halting syntax highlighting.`);
         return;
       }
 
-      const htmlBlock = removePreTag(
-        buildBlock({ theme: THEME, code: node.value, lang, highlighter })
-      );
+      const htmlBlock = removePreTag(buildBlock({ theme: THEME, code: node.value, lang, highlighter }));
 
       const inlineCodeBlock = {
-        type: "element",
-        tagName: "span",
+        type: 'element',
+        tagName: 'span',
         data: {
-          hName: "span",
+          hName: 'span',
           hProperties: {
-            class: "inline-code-block",
+            class: 'inline-code-block',
           },
         },
-        children: [{ type: "html", value: htmlBlock }],
+        children: [{ type: 'html', value: htmlBlock }],
       };
 
       parent.children.splice(index, 1, inlineCodeBlock);
     });
 
-    visit(tree, "code", (node, index, parent) => {
+    visit(tree, 'code', (node, index, parent) => {
       let lang: string;
 
-      if (typeof node.lang === "string") {
+      if (typeof node.lang === 'string') {
         const langExists = highlighter.getLoadedLanguages().includes(node.lang);
         if (langExists) {
           lang = node.lang;
         } else {
-          console.warn(
-            `The language "${node.lang}" doesn't exist, falling back to plaintext.`
-          );
-          lang = "plaintext";
+          console.warn(`The language "${node.lang}" doesn't exist, falling back to plaintext.`);
+          lang = 'plaintext';
         }
       } else {
-        lang = "plaintext";
+        lang = 'plaintext';
       }
 
       const title = node.frontmatter?.title
         ? [
             {
-              type: "element",
-              tagName: "div",
+              type: 'element',
+              tagName: 'div',
               data: {
-                hProperties: { "data-remark-code-title": true },
+                hProperties: { 'data-remark-code-title': true },
               },
-              children: [{ type: "text", value: node.frontmatter.title }],
+              children: [{ type: 'text', value: node.frontmatter.title }],
             },
           ]
         : [];
 
       const copyButton = {
-        type: "element",
+        type: 'element',
         data: {
-          hName: "button",
-          hProperties: { class: "code-block-copy-button" },
+          hName: 'button',
+          hProperties: { class: 'code-block-copy-button' },
         },
-        children: [{ type: "text", value: "Copy" }],
+        children: [{ type: 'text', value: 'Copy' }],
       };
 
       const htmlBlock = buildBlock({
@@ -129,15 +123,15 @@ const remarkShiki = async () => {
       });
 
       const codeBlock = {
-        type: "element",
-        tagName: "div",
+        type: 'element',
+        tagName: 'div',
         data: {
-          hName: "div",
+          hName: 'div',
           hProperties: {
-            class: "code-block",
+            class: 'code-block',
           },
         },
-        children: [...title, copyButton, { type: "html", value: htmlBlock }],
+        children: [...title, copyButton, { type: 'html', value: htmlBlock }],
       };
 
       parent.children.splice(index, 1, codeBlock);
@@ -165,7 +159,7 @@ function buildBlock({
   // &lt;span class=&quot;line&quot;
 
   // Add "user-select: none;" for "+"/"-" diff symbols
-  if (lang === "diff") {
+  if (lang === 'diff') {
     html = html.replace(
       /<span class="line"><span style="(.*?)">([\+|\-])/g,
       '<span class="line"><span style="$1"><span style="user-select: none;">$2</span>'
@@ -180,7 +174,7 @@ function buildBlock({
 
 function removePreTag(html: string): string {
   const removePreTagRegex = /<pre.+?>(.+)<\/pre>/;
-  return html.replace(removePreTagRegex, "$1");
+  return html.replace(removePreTagRegex, '$1');
 }
 
 export default remarkShiki;
