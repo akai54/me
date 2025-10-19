@@ -9,7 +9,7 @@ import type { Headings } from "../content/config";
 
 interface Props {
   minutesToRead: number;
-  entry: CollectionEntry<"blog"> | CollectionEntry<"tutorials">;
+  entry: CollectionEntry<"blog"> | CollectionEntry<"tutorials"> | CollectionEntry<"translations">;
   headings: Headings;
 }
 
@@ -22,7 +22,7 @@ const publishDate = entry.data.publishedOn.toLocaleDateString("en-us", {
   day: "numeric",
 });
 
-const isHomePage = entry.data?.tutorial?.homePage ?? false;
+const isHomePage = entry.collection === "tutorials" && entry.data.tutorial?.homePage === true
 const fullUrl = `https://beshoux.neocities.org/${entry.collection}/${entry.slug}/`;
 const githubEditPath = `/src/content/${entry.collection}/${entry.slug}${isHomePage? '/index' : ''}.md`;
 
@@ -32,7 +32,7 @@ const headings: MarkdownHeading[] = [
 ].filter(({ depth }) => depth < 4);
 
 const isRTL = entry.collection === "translations" && 
-              entry.data.translation.targetlLanguage === "Arabic";
+              entry.data.translation.targetLanguage === "Arabic";
 ---
 
 <BaseLayout
@@ -110,15 +110,17 @@ const isRTL = entry.collection === "translations" &&
       </a>
     </div>
 
-    <Image
+    {entry.data.imageSrc && (
+      <Image
       transition:name={`hero-image-${entry.data.imageAlt}`}
       src={entry.data.imageSrc}
-      alt={entry.data.imageAlt}
+      alt={entry.data.imageAlt ?? ""}
       class="rounded-md shadow-lg max-h-96 w-full object-cover"
     />
+    )}
 
     <div class="pt-1 pb-4 text-sm text-center text-zinc-700 dark:text-zinc-200">
-      Photo By <a
+      {entry.data.imageDescription} <a
         class="text-yellow-600 dark:text-yellow-400 hover:underline font-medium"
         href={entry.data.imageCreditUrl}>{entry.data.imageCreditName}</a
       >

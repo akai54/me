@@ -45,10 +45,11 @@ export const blogSchema = ({ image }: SchemaContext) =>
     draft: z.boolean().optional(),
     tags: z.array(TagSchema),
     publishedOn: z.date(),
-    imageSrc: image(),
-    imageAlt: z.string(),
-    imageCreditName: z.string(),
-    imageCreditUrl: z.string(),
+    imageSrc: image().optional(),
+    imageAlt: z.string().optional(),
+    imageCreditName: z.string().optional(),
+    imageCreditUrl: z.string().optional(),
+    imageDescription: z.string().optional(),
   });
 
 export const tutorialsSchema = (context: SchemaContext) =>
@@ -66,7 +67,6 @@ export const translationsSchema = (context: SchemaContext) =>
       originalTitle: z.string(),
       originalLanguage: z.string(),
       targetLanguage: z.string(),
-      title: z.string(),
       originalAuthor: z.string(),
       slug: z.string(),
       homePage: z.boolean().optional(),
