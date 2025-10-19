@@ -5,8 +5,8 @@ import type { Tag } from "../content/config";
 import Pill from "./Pill.astro";
 
 interface Props extends HTMLAttributes<"a"> {
-  imageSrc: ImageMetadata;
-  imageAlt: string;
+  imageSrc?: ImageMetadata;
+  imageAlt?: string;
   tags?: Tag[];
   title: string;
   description: string;
@@ -26,12 +26,13 @@ const {
   {...rest}
   class="grid group w-80 p-4 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-700/75 transition-colors"
 >
-  <Image
+  {imageSrc && ( <Image
     transition:name={`hero-image-${imageAlt}`}
     src={imageSrc}
     class="h-40 w-72 object-cover rounded-md overflow-hidden"
-    alt={imageAlt}
+    alt={imageAlt ?? ""}
   />
+  )}
 
   <div class="relative pt-4 pb-2 w-s">
     <h3 class="text-lg font-bold" transition:name={`hero-title-${title}`}>

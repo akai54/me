@@ -38,8 +38,8 @@ const isRTL = entry.collection === "translations" &&
 <BaseLayout
   title={entry.data.title}
   tags={entry.data.tags}
-  imageSrc={entry.data.imageSrc}
-  imageAlt={entry.data.imageAlt}
+  imageSrc?={entry.data.imageSrc}
+  imageAlt?={entry.data.imageAlt}
 >
   <TableOfContents
     client:media="(min-width: 80rem)"
@@ -110,6 +110,7 @@ const isRTL = entry.collection === "translations" &&
       </a>
     </div>
 
+    
     {entry.data.imageSrc && (
       <Image
       transition:name={`hero-image-${entry.data.imageAlt}`}
