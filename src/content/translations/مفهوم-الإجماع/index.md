@@ -1,13 +1,13 @@
 ---
 title: مفهوم «الإجماع» في سلاسل الكُتل‏
-description: هذه ترجمة عربية لمقالة بابلو روزي بعنوان ”Vocabulaire : consensus“
+description: هذه ترجمة عربية لمقالة بابلو روزي بعنوان ”Vocabulaire ‏:‏ consensus“
 tags:
   - blockchain
   - cryptocurrency
   - web3
 publishedOn: 2025-10-19
 translation:
-  originalTitle: Vocabulaire :‏ consensus
+  originalTitle: Vocabulaire ‏:‏ consensus
   originalLanguage: French
   originalAuthor: Pablo Rauzy
   targetLanguage: Arabic
