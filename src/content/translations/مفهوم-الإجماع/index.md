@@ -1,6 +1,6 @@
 ---
 title: مفهوم «الإجماع» في سلاسل الكُتل‏
-description: هذه ترجمة عربية لمقالة بابلو روزي بعنوان ”La vérité sur la blockchain“
+description: هذه ترجمة عربية لمقالة بابلو روزي بعنوان ”Vocabulaire : consensus“
 tags:
   - blockchain
   - cryptocurrency
