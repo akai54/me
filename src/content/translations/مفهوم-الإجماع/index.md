@@ -102,7 +102,7 @@ imageDescription: صورة شائعة لكنها غير دقيقة لمفهوم 
 </p>
 
 <div style="border-top: 1px solid #ccc; padding-top: 0.3em; margin-top: 1em;">
-  <h2 style="margin-top: 1em; margin-bottom: 0; font-size: 1.5em;">الحاشية</h2>
+  <h2 style="margin-top: 1em; margin-bottom: 0; font-size: 1.5em;">الهوامش</h2>
 </div>
 
   <div class="footnotes">
