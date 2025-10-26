@@ -26,13 +26,22 @@ const isHomePage = entry.collection === "tutorials" && entry.data.tutorial?.home
 const fullUrl = `https://beshoux.neocities.org/${entry.collection}/${entry.slug}/`;
 const githubEditPath = `/src/content/${entry.collection}/${entry.slug}${isHomePage? '/index' : ''}.md`;
 
+const isRTL: boolean = entry.collection === "translations" && 
+              entry.data.translation.targetLanguage === "Arabic";
+
 const headings: MarkdownHeading[] = [
-  { depth: 2, slug: "overview", text: "Overview" },
+  { 
+    depth: 2,
+    slug: "overview",
+    text: isRTL ? "نظرة عامة" : "Overview",
+  },
+  { 
+    depth: 8,
+    slug: "footnote-label",
+    text: isRTL ? "الهوامش" : "Footnotes",
+  },
   ...Astro.props.headings,
 ].filter(({ depth }) => depth < 4);
-
-const isRTL = entry.collection === "translations" && 
-              entry.data.translation.targetLanguage === "Arabic";
 ---
 
 <BaseLayout
@@ -44,6 +53,7 @@ const isRTL = entry.collection === "translations" &&
   <TableOfContents
     client:media="(min-width: 80rem)"
     headings={headings}
+    isRTL={isRTL}
     slot="right-sidebar"
   />
   <script>

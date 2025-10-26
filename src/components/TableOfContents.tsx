@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 
 interface Props {
   headings: MarkdownHeading[];
+  isRTL?: boolean;
 }
 
-export const TableOfContents = ({ headings }: Props) => {
+export const TableOfContents = ({ headings, isRTL = false }: Props) => {
   const [currentID, setCurrentID] = useState('overview');
 
   useEffect(() => {
@@ -27,7 +28,9 @@ export const TableOfContents = ({ headings }: Props) => {
     });
 
     // Observe all the headings in the main page content.
-    document.querySelectorAll('#article :is(h1,h2,h3)').forEach((h) => headingsObserver.observe(h));
+    for (const h of document.querySelectorAll('#article :is(h1,h2,h3)')) {
+      headingsObserver.observe(h);
+    }
 
     return () => headingsObserver.disconnect();
   }, []);
@@ -40,8 +43,8 @@ export const TableOfContents = ({ headings }: Props) => {
 
   return (
     <>
-      <h2 id="on-this-page-heading" className="pl-5 text- pb-2 font-semibold">
-        On this page
+      <h2 id="on-this-page-heading" className="pl-5 text-lg pb-2 font-semibold">
+        {isRTL ? 'على هذه الصفحة' : 'On this page'}
       </h2>
       <ul>
         {headings.map(({ depth, slug, text }) => (
@@ -57,7 +60,7 @@ export const TableOfContents = ({ headings }: Props) => {
                 setCurrentID(slug);
               }}>
               <span className="relative">
-                {text}
+                {isRTL && slug === 'footnote-label' ? 'الهوامش' : text}
                 <span className="h-0.5 left-0 -bottom-1 w-full block absolute scale-x-0 group-hover:scale-x-100 transition-transform ease-in origin-left group-hover:bg-black dark:group-hover:bg-white" />
               </span>
             </a>
